@@ -50,14 +50,14 @@ set ssop-=options "Do not store global and local values in a session
 "let mapleader = ","
 let g:active_relativenumber = 1 
 imap ds <ESC>
-:map <Tab> :bp!<CR>
+":map <Tab> :bp!<CR>
 :map <C-F5> :mks! ~/cb/sessions/
 :map <S-F9> :colorscheme northerner<CR>:set bg=dark<CR>:set cursorcolumn!<CR>:AirlineTheme oceanicnext<CR>:IndentGuidesEnable<CR>:cd ~/cb/<CR>
 :map <C-F3> :source ~/cb/sessions/
 :map <S-F10> :source ~/.vimrc<CR>
 :map <S-F11> :colorscheme pyte<CR>:AirlineToggleWhitespace<CR>:AirlineTheme oceanicnextlight<CR>:set noshowmode<CR>:IndentGuidesEnable<CR>:cd ~/cb/<CR>:set bg=light<CR>:set cursorcolumn<CR>:highlight CursorLineNr guifg=#839496<CR>:pwd<CR>
 :map <S-F12> :e ~/.vimrc<CR>
-:map <S-Tab> :bn!<CR>
+":map <S-Tab> :bn!<CR>
 inoremap { {<CR>}<Esc>O
 nnoremap <Leader>] :w!<CR>
 nnoremap <Leader>[ :q!<CR>
@@ -128,6 +128,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline' "<C-F5>
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'jceb/vim-orgmode'
 " Colorschemas
 Plugin 'therubymug/vim-pyte'
 Plugin 'mhartington/oceanic-next'
@@ -139,12 +140,12 @@ Plugin 'shougo/tabpagebuffer.vim'
 Plugin 'shougo/unite.vim'
 Plugin 'shougo/unite-outline' "<C-F1>
 Plugin 'tsukkee/unite-tag'
-Plugin 'tpope/vim-fugitive' "Tag-related
+Plugin 'tpope/vim-fugitive' "Tag-related git integration
 Plugin 'neomake/neomake' "???
 Plugin 'jakedouglas/exuberant-ctags'
 " Syntax
+Plugin 'valloric/youcompleteme'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'ervandew/supertab' "Completion
 Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'stanangeloff/php.vim'
@@ -226,6 +227,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:indentLine_setColors = 0
+"
+&quot;syntastic&quot;                                                                                                             
+let g:syntastic_java_checker = 'javac'
+let g:syntastic_java_javac_classpath = &quot;~/*.jar\n./src&quot;
 
 
 " PHP Settings "
